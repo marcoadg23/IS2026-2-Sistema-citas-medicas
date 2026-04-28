@@ -5,6 +5,7 @@ function login(){
     let contra = document.querySelectorAll('.entradaTexto')[1].value;
 
     if(usuario=="admin" && contra=="123"){
+        localStorage.setItem("usuario",usuario)
         window.location.href="/pages/principal.html";
     }else{
         divMensaje.innerHTML = "Credenciales incorrectas";
