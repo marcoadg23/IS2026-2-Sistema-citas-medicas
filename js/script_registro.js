@@ -1,9 +1,8 @@
 const campos =[
     {name: 'nombre', label: 'Ingresa tu nombre', type:'text'},
-    {name: 'email', label: 'Ingresa tu correo', type:'email'},
+    {name: 'correo', label: 'Ingresa tu correo', type:'email'},
     {name: 'password', label: 'Ingresa tu contraseña', type:'password'},
-    {name: 'edad', label: 'Ingresa tu edad', type:'number'},
-    {name: 'rol', label: 'Ingresa tu rol', type:'number'}
+    {name: 'edad', label: 'Ingresa tu edad', type:'number'}
 ]
 
 const contenedor = document.getElementById('contenedorInputs');
@@ -21,4 +20,20 @@ campos.forEach((campo) => {
 
     contenedor.appendChild(label);
     contenedor.appendChild(input);
+})
+
+document.getElementById('btnRegistrar').addEventListener('click', async ()=>{
+    const nombre = document.getElementById('nombre').value;
+    const correo = document.getElementById('correo').value;
+    const password = document.getElementById('password').value;
+    const edad = document.getElementById('edad').value;
+
+    const {data,error} = await db
+        .from('usuarios')
+        .insert([{nombre,correo,password,edad,id_rol:2}]);
+    if(error){
+        alert('Ocurrió un error al registrar al usuario');
+    }else{
+        alert('Usuario registrado correctamente');
+    }
 })
