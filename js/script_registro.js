@@ -29,7 +29,7 @@ document.getElementById('btnRegistrar').addEventListener('click', async ()=>{
     const edad = document.getElementById('edad').value;
 
     const {data,error} = await db
-        .from('usuarios')
+        .from('usuario')
         .insert([{nombre,correo,password,edad,id_rol:2}]);
     if(error){
         alert('Ocurrió un error al registrar al usuario');
