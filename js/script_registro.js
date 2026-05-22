@@ -1,8 +1,8 @@
 const campos =[
-    {name: 'nombre', label: 'Ingresa tu nombre', type:'text'},
-    {name: 'correo', label: 'Ingresa tu correo', type:'email'},
-    {name: 'password', label: 'Ingresa tu contraseña', type:'password'},
-    {name: 'edad', label: 'Ingresa tu edad', type:'number'}
+    {name: 'nombre', label: 'Nombre', type:'text'},
+    {name: 'correo', label: 'Correo', type:'email'},
+    {name: 'password', label: 'Contraseña', type:'password'},
+    {name: 'edad', label: 'Edad', type:'number'}
 ]
 
 const contenedor = document.getElementById('contenedorInputs');
@@ -10,11 +10,13 @@ const contenedor = document.getElementById('contenedorInputs');
 campos.forEach((campo) => {
     const label = document.createElement('label');
     label.textContent = campo.label;
+    label.htmlFor = campo.name;
 
     const input = document.createElement('input');
     input.type=campo.type;
     input.name=campo.name;
     input.id=campo.name;
+    input.placeholder="Ingresa tu "+campo.name;
 
     input.classList.add('entradaTexto');
 

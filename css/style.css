@@ -1,3 +1,11 @@
+:root{
+    --colorPrincipal:#8f98e4;
+    --colorSecundario:#ffffff;
+    --colorBotones:rgb(96, 8, 238);
+    --colorBotonesDeshabilitados:rgb(96, 8, 238,0.2);
+    --titulos: rgb(8, 64, 91);
+}
+
 *{
     margin:0;
     padding: 0;
@@ -6,7 +14,7 @@
 
 body{
     font-family: Arial;
-    background: #8f98e4;
+    background: var(--colorPrincipal);
 
     display:flex;
     justify-content: center;
@@ -15,8 +23,8 @@ body{
     flex-direction: column;
 }
 
-#formularioInicio{
-    background-color: #ffffff;
+#formularioInicio, #formularioRegistro{
+    background-color: var(--colorSecundario);
     width: 350px;
     padding: 30px;
 
@@ -24,17 +32,20 @@ body{
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
+
+    gap: 10px;
 }
 
-h1{
-    color: rgb(8, 64, 91);
+h1,h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--titulos);
     margin-bottom: 20px;
 }
 
 label{
     margin-bottom: 10px;
     margin-top: 10px;
-    color: rgb(38, 38, 185);
+    color: var(--colorBotones);
 }
 #logoHospital{
     width: 80px;
@@ -44,25 +55,45 @@ label{
     padding: 14px;
     margin-bottom: 20px;
     border: none;
-    border-bottom: 2px solid rgb(96, 8, 238);
+    border-bottom: 2px solid var(--colorBotones);
     outline: none;
-}
-.entradaTexto{
+    width: 100%;
     transition: 0.3s;
 }
 .entradaTexto:focus{
-    border-color: green;
+    border-color: var(--titulos);
     transform: scale(1.1);
 }
-#btnIngresar{
+#btnIngresar,#btnRegistrar{
     padding:14px;
     border: none;
-    background: #8f98e4;
+    background:  var(--colorBotones);
     color: white;
     cursor: pointer;
 
     transition: 0.3s;
 }
 #btnIngresar:hover{
-    background: #0c21e2;
+    background: var(--colorBotonesDeshabilitados);
 }
+
+#mensaje{
+    display:none;
+}
+
+#mensaje:not(:empty){
+    display:block;
+    background:var(--colorSecundario);
+    color: var(--titulos);
+    padding:18px;
+    margin-bottom:15px;
+    border-left:6px solid var(--colorBotones);
+    border-radius:12px;
+    box-shadow:0 0 20px var(--colorBotonesDeshabilitados);
+    animation:aparecer 1s;
+}
+
+@keyframes aparecer{
+    from{opacity:0;transform:translateY(-10px)}
+}
+
