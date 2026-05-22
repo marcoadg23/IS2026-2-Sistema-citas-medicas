@@ -1,29 +1,30 @@
-:root{
-    --colorPrincipal:#8f98e4;
-    --colorSecundario:#ffffff;
-    --colorBotones:rgb(96, 8, 238);
-    --colorBotonesDeshabilitados:rgb(96, 8, 238,0.2);
+:root {
+    --colorPrincipal: #8f98e4;
+    --colorSecundario: #ffffff;
+    --colorBotones: rgb(96, 8, 238);
+    --colorBotonesDeshabilitados: rgb(96, 8, 238, 0.2);
     --titulos: rgb(8, 64, 91);
 }
 
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: Arial;
     background: var(--colorPrincipal);
 
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     flex-direction: column;
 }
 
-#formularioInicio, #formularioRegistro{
+#formularioInicio,
+#formularioRegistro {
     background-color: var(--colorSecundario);
     width: 350px;
     padding: 30px;
@@ -36,22 +37,25 @@ body{
     gap: 10px;
 }
 
-h1,h2{
+h1,
+h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: var(--titulos);
     margin-bottom: 20px;
 }
 
-label{
+label {
     margin-bottom: 10px;
     margin-top: 10px;
     color: var(--colorBotones);
 }
-#logoHospital{
+
+#logoHospital {
     width: 80px;
-    margin:0 auto 20px;
+    margin: 0 auto 20px;
 }
-.entradaTexto{
+
+.entradaTexto {
     padding: 14px;
     margin-bottom: 20px;
     border: none;
@@ -60,40 +64,68 @@ label{
     width: 100%;
     transition: 0.3s;
 }
-.entradaTexto:focus{
+
+.entradaTexto:focus {
     border-color: var(--titulos);
     transform: scale(1.1);
 }
-#btnIngresar,#btnRegistrar{
-    padding:14px;
+
+#btnIngresar,
+#btnRegistrar {
+    padding: 14px;
     border: none;
-    background:  var(--colorBotones);
+    background: var(--colorBotones);
     color: white;
     cursor: pointer;
 
     transition: 0.3s;
 }
-#btnIngresar:hover{
+
+#btnIngresar:hover {
     background: var(--colorBotonesDeshabilitados);
 }
 
-#mensaje{
-    display:none;
+#mensaje {
+    display: none;
 }
 
-#mensaje:not(:empty){
-    display:block;
-    background:var(--colorSecundario);
+#mensaje:not(:empty) {
+    display: block;
+    background: var(--colorSecundario);
     color: var(--titulos);
-    padding:18px;
-    margin-bottom:15px;
-    border-left:6px solid var(--colorBotones);
-    border-radius:12px;
-    box-shadow:0 0 20px var(--colorBotonesDeshabilitados);
-    animation:aparecer 1s;
+    padding: 18px;
+    margin-bottom: 15px;
+    border-left: 6px solid var(--colorBotones);
+    border-radius: 12px;
+    box-shadow: 0 0 20px var(--colorBotonesDeshabilitados);
+    animation: aparecer 1s;
 }
 
-@keyframes aparecer{
-    from{opacity:0;transform:translateY(-10px)}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-10px)
+    }
+}
+#bienvenida{
+    margin-bottom: 25px;
 }
 
+#cerrarSesion{
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+
+    background: var(--colorBotones);
+    color: white;
+
+    font-size: 15px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#cerrarSesion:hover{
+    background: var(--colorBotonesDeshabilitados);
+    transform: scale(1.05);
+}

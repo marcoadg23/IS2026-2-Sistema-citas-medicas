@@ -34,8 +34,10 @@ document.getElementById('btnRegistrar').addEventListener('click', async ()=>{
         .from('usuario')
         .insert([{nombre,correo,password,edad,id_rol:2}]);
     if(error){
-        alert('Ocurrió un error al registrar al usuario');
+        alert('Ocurrió un error:'+error.message);
     }else{
+        
+        window.location.href = "../index.html";
         alert('Usuario registrado correctamente');
     }
 })
